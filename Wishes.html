@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Wishes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ff399c; /* Light gray background */
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .card {
+      width: calc(50% - 20px); /* Each card takes up 1/2 of the container width with some margin */
+      margin: 20px;
+      background-color: #ff99cc; /* Pink background */
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Box shadow */
+      padding: 20px;
+      transition: transform 0.3s ease;
+      cursor: pointer; /* Cursor pointer */
+    }
+
+    .card:hover {
+      transform: scale(1.05); /* Scale up on hover */
+    }
+
+    .wish {
+      font-size: 18px;
+      color: #333; /* Dark gray text color */
+    }
+    /* Custom color classes */
+    .pink {
+      background-color: #ff99cc; /* Medium pink */
+    }
+
+    .blue {
+      background-color: #99ccff; /* Light blue */
+    }
+
+    .green {
+      background-color: #99ff99; /* Light green */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Card 1 -->
+    <div class="card pink" onclick="toggleSize(this)">
+      <p class="wish">Happy Birthday! Wishing you a day filled with love and laughter.</p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card blue" onclick="toggleSize(this)">
+      <p class="wish">On your special day, may all your dreams and wishes come true.</p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card green" onclick="toggleSize(this)">
+      <p class="wish">Sending you smiles for every moment of your special day!</p>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card pink" onclick="toggleSize(this)">
+      <p class="wish">Wishing you happiness, health, and all the best on your birthday!</p>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="card blue" onclick="toggleSize(this)">
+      <p class="wish">May your birthday be the start of a year filled with good luck, good health, and much happiness.</p>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="card green" onclick="toggleSize(this)">
+      <p class="wish">Sending you warmest wishes for a fantastic birthday celebration!</p>
+    </div>
+  </div>
+
+  <script>
+    // Toggle size of the clicked card
+    function toggleSize(card) {
+      card.classList.toggle('large');
+    }
+  </script>
+</body>
+</html>
