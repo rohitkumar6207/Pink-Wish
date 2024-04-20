@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pink Wishes</title>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffe6f0; /* Light pink background */
+    }
+
+    header {
+      background-color: #ff99cc; /* Medium pink */
+      padding: 20px;
+      text-align: center; /* Center header content */
+    }
+
+    header h1 {
+      color: #ff0080; /* Dark pink */
+      margin: 0;
+    }
+
+    main {
+      padding: 20px;
+      text-align: center; /* Center content */
+    }
+
+    .content-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .timer-container {
+      margin-bottom: 20px;
+    }
+
+    .timer-container h2 {
+      color: #ff3399; /* Dark pink */
+      font-size: 24px; /* Larger font size for timer */
+      margin-bottom: 10px; /* Add space below timer */
+    }
+
+    #timer {
+      font-size: 20px; /* Adjust font size of timer */
+      color: #ff0080; /* Dark pink */
+      border: 2px solid #ff0080; /* Dark pink border */
+      border-radius: 10px; /* Rounded border */
+      padding: 10px 20px; /* Padding for timer */
+      display: inline-block; /* Ensure timer stays inline */
+      transition: transform 0.2s ease; /* Add transition effect */
+    }
+
+    #timer:hover {
+      transform: scale(1.05); /* Scale up on hover */
+    }
+
+    .circular-image {
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      margin-bottom: 20px;
+    }
+
+    .video-container {
+      overflow-x: hidden; /* Hide horizontal scrollbar */
+      margin-top: 20px;
+    }
+
+    .video-player {
+      width: 100%; /* Full width for video players */
+      height: auto; /* Auto height to maintain aspect ratio */
+      background-color: #2d0016; /* Medium pink */
+      margin-bottom: 20px; /* Add space between video players */
+    }
+
+    button a {
+      text-decoration: none; /* Remove underline */
+    }
+
+    button {
+      background-color: #ff99cc; /* Medium pink */
+      color: #900048; /* Dark pink */
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      /* Add a linear gradient background */
+      background-image: linear-gradient(to bottom, #ff99cc, #ff66b3);
+    }
+
+    button:hover {
+      background-color: #ff3399; /* Lighter pink on hover */
+      transform: translateY(-2px);
+    }
+
+    button:active {
+      transform: translateY(1px); /* Push down on click */
+    }
+
+    @media screen and (max-width: 767px) {
+      button {
+        padding: 8px 16px; /* Adjust padding for smaller devices */
+        font-size: 14px; /* Adjust font size for smaller devices */
+      }
+
+      #timer {
+        font-size: 16px; /* Adjust font size for smaller devices */
+        padding: 8px 16px; /* Adjust padding for smaller devices */
+      }
+    }
+
+    footer {
+      background-color: #900048;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer p {
+      color: #ff3399; /* Dark pink */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Wishing you the happiest Birthday ever...</h1>
+  </header>
+  <main>
+    <div class="content-container">
+      <h1>Happy Birthday Anindita</h1>
+      <div class="image-slider-container">
+        <img src="IMG-20240420-WA0002.jpg" alt="Birthday Celebration" class="circular-image">
+      </div>
+
+      <div class="timer-container">
+        <h2>Countdown Timer:</h2>
+        <div id="timer"></div>
+      </div>
+
+      <div class="video-container">
+        <video class="video-player" controls>
+          <source src="VID-20240420-WA0001.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <video class="video-player" controls>
+          <source src="WhatsApp Video 2024-04-20 at 00.07.20_75b861fb.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <video id="main-video" class="video-player" controls>
+          <source src="WhatsApp Video 2024-04-20 at 00.07.12_61526f0a.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <video class="video-player" controls>
+          <source src="VID-20240420-WA0001.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <video class="video-player" controls>
+          <source src="WhatsApp Video 2024-04-20 at 00.07.20_75b861fb.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <button><a href="Wishes.html">Wishes</a></button>
+      <button><a href="Our Bond.html">Our Bond</a></button>
+      <button><a href="Gallery.html">Gallery</a></button>
+      <button><a href="Letter.html">Letter</a></button>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2024 Pink Wishes. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Set the date for the birthday
+    const birthdayDate = new Date('2024-10-04 00:00:00').getTime();
+
+    // Update the countdown every second
+    const timerInterval = setInterval(() => {
+      // Get the current date and time
+      const currentDate = new Date().getTime();
+      
+      // Calculate the time remaining until the birthday
+      const timeRemaining = birthdayDate - currentDate;
+      
+      // Calculate days, hours, minutes, and seconds
+      const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+      
+      // Display the countdown timer
+      document.getElementById('timer').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+      
+      // If the countdown is over, display a message
+      if (timeRemaining < 0) {
+        clearInterval(timerInterval);
+        document.getElementById('timer').innerHTML = "Happy Birthday!";
+      }
+    }, 1000);
+
+    // Make the middle video larger when clicked
+    const videos = document.querySelectorAll('.video-player');
+    const mainVideo = document.getElementById('main-video');
+
+    videos.forEach(video => {
+      video.addEventListener('click', () => {
+        mainVideo.removeAttribute('id'); // Remove id from previous main video
+        mainVideo.classList.remove('video-player--main'); // Remove larger size class from previous main video
+        mainVideo.setAttribute('controls', ''); // Remove controls attribute from previous main video
+        video.setAttribute('id', 'main-video'); // Set id to current video
+        video.classList.add('video-player--main'); // Add larger size class to current video
+        video.removeAttribute('controls'); // Remove controls attribute from current video
+      });
+    });
+  </script>
+</body>
+</html>
